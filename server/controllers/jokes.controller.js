@@ -11,7 +11,7 @@ module.exports = {
 
     findOne: (req, res) =>{
         console.log(req.params)
-        Jokes.find(req.params._id)
+        Jokes.findById(req.params.id)
             .then(joke => res.json(joke))
             .catch(err => res.json({message: "There was an error res", error: err}))
     },
